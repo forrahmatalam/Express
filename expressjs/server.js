@@ -1,11 +1,16 @@
 const express=require('express');
 
 
+
 const app=express();
 
-app.put('/',(req,res)=>{
-    res.send('change hua kya');
+app.use(express.json()); //use middleware due to express text nhi padh pata expjson padhrta hai 
+
+app.post('/create',(req,res)=>{
+    console.log(req.body);
+    res.send('Data received');
 })
+
 
 
 let port =3000;
